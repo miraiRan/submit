@@ -7,6 +7,7 @@
     <link rel="stylesheet" type="text/css" href="index.css">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.6.3/css/all.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.1.4/jquery.min.js"></script>
+    <script type="text/javascript" src="index.js"></script>
 </head>
 <body>
     <!--ここからヘッダー-->
@@ -22,6 +23,26 @@
 
     <!--ここからメイン内容-->
     <div class="main">
+         <div>
+                <img class="logo" id="image1" onclick="slideshow()" src="img/top1.jpg">
+                    <script>
+                        var pics_src = new Array("img/top1.jpg","img/top2.jpg","img/top3.jpg");
+                        var num = -1;
+
+                        slideshow_timer();
+
+                        function slideshow_timer(){
+                        if (num == 2){
+                        num = 0;
+                        }
+                        else {
+                        num ++;
+                        }
+                        document.getElementById("image1").src=pics_src[num];
+                        setTimeout("slideshow_timer()",3000);
+                        }
+                        </script>
+         </div>
         <div class="top-wrap">
                 <p>SHIRAN MAENO</p>
                 <p>INTRODUCTION</p>
@@ -86,8 +107,9 @@
                 </div>
             </div>
         </div>
+
     <!--ここからコンタクトフォーム-->
-        <div class="contact" id="contact">
+        <div class="contact" id="contact"></div>
             <h1>お誘いのお願い</h1>
             <div class="contact-wrap">
                 <p class="contact-sentence">ダイビングが趣味の方、ダイビングに興味のある方！<br>一緒に潜りましょう！</p>
@@ -105,7 +127,6 @@
     <footer>
         <p>Shiran Maeno</p>
     </footer>
-    <script type="text/javascript" src="part1.js"></script>
 </body>
 
 </html>
